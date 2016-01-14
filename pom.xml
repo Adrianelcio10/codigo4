@@ -22,5 +22,27 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
+<profiles>
+  <profile>
+    <id>P1</id>
+  </profile>
+</profiles>
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-jar-plugin</artifactId>
+			<version>2.6</version>
+			<configuration>
+			   <archive>
+				<manifest>
+					<mainClass>${project.groupId}.myApp_53737212N</mainClass>
+				</manifest>
+			  </archive>
+			</configuration>
+    </plugin>
+  </plugins>
+</build>
+#Se ha configurado el pluging jar que está asociada a la fase package.
+#Al evaluar el objetivo jar:jar o la fase package, creará el .jar con la configuración anterior.
 </project>
